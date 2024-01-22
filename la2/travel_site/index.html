@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Tours & Travel</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Oleo+Script:wght@700&family=Quicksand:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/shared.css" />
+    <style>
+      #hero {
+        height: 800px;
+        background-image: url(/images/icon/ocean.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+
+      #hero-content {
+        width: 900px;
+        background-color: rgba(51, 47, 47, 0.8);
+        box-shadow: 2px 4px 8px rgb(68, 67, 67);
+        border-radius: 8px;
+        text-align: center;
+        padding: 50px 0;
+        margin: 0 auto;
+        /* to align container to center that why use auto for left and right side*/
+        position: relative;
+        /*we made it relative from static to change document flow */
+        top: 200px;
+        /* to move the container vertical down  */
+      }
+
+      #hero-content h1 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 50px;
+        font-family: "Raleway", sans-serif;
+        margin: 0;
+      }
+
+      #hero-content p {
+        color: white;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 300;
+      }
+
+      #hero-content a {
+        text-decoration: none;
+        background-color: rgb(255, 251, 0);
+        padding: 12px 24px;
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 2px 4px 8px rgb(68, 67, 67);
+      }
+
+      #hero-content a:hover {
+        background-color: rgb(255, 235, 0);
+      }
+
+      #highlights {
+        padding: 24px;
+        background: linear-gradient(
+          0deg,
+          rgb(227, 255, 253),
+          rgb(202, 243, 240)
+        );
+      }
+
+      #highlights h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 40px;
+        color: rgb(59, 65, 64);
+        margin: 24px 0;
+      }
+
+      #destinations {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 40px;
+        justify-content: space-between;
+      }
+
+      .destination {
+        margin: 0 20px;
+        text-transform: uppercase;
+      }
+
+      .destination p {
+        text-align: center;
+        font-size: 24px;
+        color: rgb(124, 123, 123);
+        margin: 20px 0;
+      }
+
+      .destination img {
+        height: 200px;
+        width: 100%;
+        box-shadow: 2px 4px 8px rgb(68, 67, 67);
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .destination strong {
+        color: rgb(0, 160, 117);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div id="page-logo"><a href="index.html">Tour & Travel</a></div>
+      <nav>
+        <ul>
+          <li><a href="places.html">Destinations</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div id="hero-content">
+          <h1>Travel Page</h1>
+          <p style="font-weight: 500">Let's explore the world</p>
+          <!--inline css -->
+          <a href="places.html">Discover pages</a>
+        </div>
+      </section>
+      <section id="highlights">
+        <h2>Highlight</h2>
+        <ul id="destinations">
+          <li class="destination">
+            <img
+              src="images/places/miami.jpg"
+              alt="miami street on sunny day"
+            />
+            <p>Miami <strong> USA</strong></p>
+          </li>
+          <li class="destination">
+            <img src="images/places/munich.jpg" alt="munich statium" />
+            <p>Munich <strong>Germany</strong></p>
+          </li>
+          <li class="destination">
+            <img
+              src="images/places/barcelona.jpg"
+              alt="Palm Beach in Barcelon"
+            />
+            <p>Barcelon <strong> Spain</strong></p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href="https://www.instagram.com"
+            ><img src="images/icon/insta.png" alt="insta logo"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com"
+            ><img src="images/icon/facebook.png" alt="facebook logo"
+          /></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
