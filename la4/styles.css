@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(45deg, #0a0a0a, #3a4454);
+}
+
+
+main {
+
+    padding: 2vw;
+    box-shadow: 0 0 15px #000;
+    border: 2px solid rgb(115, 115, 117);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+}
+
+input {
+    width: 50vw;
+    margin: 0.1;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 4vmax;
+    text-align: right;
+    cursor: pointer;
+
+}
+
+input::placeholder {
+    color: white;
+}
+
+button {
+    width: 10.5vmin;
+    height: 10.5vmin;
+    margin: 1.5vh;
+    padding: 1vmin;
+    background: transparent;
+    color: white;
+    font-size: 3.3vmin;
+    font-weight: 600;
+    border: 0;
+    box-shadow: -1vw -1vw 2vw #000;
+    border-radius: 50%;
+    outline: 1px solid #313131;
+    outline-offset: 0.2vh;
+
+
+}
+
+button:active {
+    background-color: #000;
+    transform: translate(0vh, 1vh);
+}
+
+.operator {
+    color: aqua;
+    background-color: #1e1919;
+    font-weight: 600;
+}
+
+#equal-btn {
+    background-color: rgb(224, 86, 36);
+    font-weight: 900;
+    width: 24vmin;
+    height: 10vmin;
+    border-radius: 30px;
+    font-size: 4vmin;
+}
