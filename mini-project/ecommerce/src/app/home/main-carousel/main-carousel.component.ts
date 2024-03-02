@@ -14,6 +14,7 @@ export class MainCarouselComponent {
 
   ngOnInit() {
     this.carouselData = homeCarouselData;
+    this.autoPlay();
   }
 
   autoPlay() {
