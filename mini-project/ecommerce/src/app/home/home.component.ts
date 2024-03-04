@@ -1,5 +1,7 @@
 import { menJeans } from './../../Data/Men/men_jeans';
 import { Component } from '@angular/core';
+import { gounsPage1 } from 'src/Data/Gouns/gouns';
+import { lehngaCholiPage2 } from 'src/Data/Saree/lenghaCholiPage2';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,14 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   menJeans: any;
-  ngOnInit(){
-    this.menJeans = menJeans.slice(0,5)
+  womenGouns: any;
+  lenghaCholi: any;
+  mensKurta: any;
+  mensShoes: any;
+
+  ngOnInit() {
+    this.menJeans = menJeans.slice(0, 5);
+    this.womenGouns = gounsPage1.slice(0, 5);
+    this.lenghaCholi = lehngaCholiPage2.slice(0, 5);
   }
 }
