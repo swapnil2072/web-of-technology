@@ -18,10 +18,10 @@ export class HomeComponent {
   mensShoes: any;
 
   ngOnInit() {
-    this.menJeans = menJeans.slice(0, 5);
-    this.womenGouns = gounsPage1.slice(0, 5);
-    this.lenghaCholi = lehngaCholiPage2.slice(0, 5);
-    this.menJeans = mensShoesPage1.slice(0, 5);
-    this.mensKurta = kurtaPage1.slice(0, 5);
+    this.menJeans = menJeans.slice(0, 4);
+    this.womenGouns = gounsPage1.slice(0, 4);
+    this.lenghaCholi = lehngaCholiPage2.slice(0, 4);
+    this.mensShoes = mensShoesPage1.slice(0, 4);
+    this.mensKurta = kurtaPage1.slice(0, 4);
   }
 }
