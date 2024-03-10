@@ -39,16 +39,29 @@ public class DisplayBooksServlet extends HttpServlet {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            // Display the table content
-            out.println("<html><body><h2>Book List</h2><table border='1'><tr><th>ID</th><th>Title</th><th>Author</th><th>Price</th><th>Quantity</th></tr>");
-            while (resultSet.next()) {
-                out.println("<tr><td>" + resultSet.getInt("book_id") + "</td><td>"
-                        + resultSet.getString("book_title") + "</td><td>"
-                        + resultSet.getString("book_author") + "</td><td>$"
-                        + resultSet.getDouble("book_price") + "</td><td>"
-                        + resultSet.getInt("quantity") + "</td></tr>");
-            }
-            out.println("</table></body></html>");
+         
+
+         // Display the table content with added styling
+         out.println("<html><head><style>"
+                 + "table {border-collapse: collapse; width: 100%;}"
+                 + "th, td {border: 1px solid #dddddd; text-align: left; padding: 8px;}"
+                 + "th {background-color: #f2f2f2;}"
+                 + "</style></head><body>"
+                 + "<h2>Book List</h2><table>"
+                 + "<tr><th>ID</th><th>Title</th><th>Author</th><th>Price</th><th>Quantity</th></tr>");
+
+         while (resultSet.next()) {
+             out.println("<tr><td>" + resultSet.getInt("book_id") + "</td><td>"
+                     + resultSet.getString("book_title") + "</td><td>"
+                     + resultSet.getString("book_author") + "</td><td>$"
+                     + resultSet.getDouble("book_price") + "</td><td>"
+                     + resultSet.getInt("quantity") + "</td></tr>");
+         }
+
+         out.println("</table></body></html>");
+
+        
+
 
             // Clean up
             resultSet.close();
