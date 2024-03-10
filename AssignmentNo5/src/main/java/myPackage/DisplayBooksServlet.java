@@ -1,0 +1,62 @@
+package myPackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.*;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/DisplayBooksServlet")
+public class DisplayBooksServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        try {
+            // Load the JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish a connection
+            String url = "jdbc:mysql://localhost:3306/ebookshop";
+            String username = "root";
+            String password = "password";
+            Connection connection = DriverManager.getConnection(url, username, password);
+
+            // Execute a SQL query
+            String sql = "SELECT * FROM ebooks";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Display the table content
+            out.println("<html><body><h2>Book List</h2><table border='1'><tr><th>ID</th><th>Title</th><th>Author</th><th>Price</th><th>Quantity</th></tr>");
+            while (resultSet.next()) {
+                out.println("<tr><td>" + resultSet.getInt("book_id") + "</td><td>"
+                        + resultSet.getString("book_title") + "</td><td>"
+                        + resultSet.getString("book_author") + "</td><td>$"
+                        + resultSet.getDouble("book_price") + "</td><td>"
+                        + resultSet.getInt("quantity") + "</td></tr>");
+            }
+            out.println("</table></body></html>");
+
+            // Clean up
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            out.println("Error: " + e.getMessage());
+        }
+    }
+}
